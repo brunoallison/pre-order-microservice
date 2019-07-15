@@ -1,0 +1,14 @@
+[2019-07-15 22:25:09] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Class 'App\Exceptions\Response' not found in /application/app/Exceptions/Handler.php:53
+Stack trace:
+#0 /application/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(105): App\Exceptions\Handler->render(Object(Laravel\Lumen\Http\Request), Object(Symfony\Component\HttpKernel\Exception\NotFoundHttpException))
+#1 /application/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\Lumen\Application->sendExceptionToHandler(Object(Symfony\Component\HttpKernel\Exception\NotFoundHttpException))
+#2 /application/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#3 /application/public/index.php(28): Laravel\Lumen\Application->run()
+#4 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Exceptions\\Response' not found at /application/app/Exceptions/Handler.php:53)
+[stacktrace]
+#0 /application/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(105): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#1 /application/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->sendExceptionToHandler(Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#2 /application/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#3 /application/public/index.php(28): Laravel\\Lumen\\Application->run()
+#4 {main}
+"} 
