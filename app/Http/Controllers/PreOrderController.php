@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Repositories\PreOrderRepository;
+
 use App\Traits\ApiResponser;
+use Illuminate\Http\Request;
+use App\Repositories\PreOrderRepository;
 
 class PreOrderController extends Controller
 {
@@ -25,6 +27,34 @@ class PreOrderController extends Controller
         $preOrders = $this->preOrderRepository->all();
 
         return $this->successResponse($preOrders);
+    }
+
+    public function show($id)
+    {
+        $preOrder = $this->preOrderRepository->find($id);
+
+        return $this->successResponse($preOrder);
+    }
+
+    public function store(Request $request)
+    {
+        $preOrder = $this->preOrderRepository->create($request->all());
+
+        return $this->successResponse($preOrder);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $preOrder = $this->preOrderRepository->update($request->all(), $id);
+
+        return $this->successResponse($preOrder);
+    }
+
+    public function destroy($id)
+    {
+        $preOrder = $this->preOrderRepository->delete($id);
+
+        return $this->successResponse($preOrder);
     }
 
 }
