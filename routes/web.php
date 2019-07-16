@@ -14,3 +14,5 @@
 $router->get('/ping', function () use ($router) {
     return "pong";
 });
+
+$router->get('/pre-orders', 'PreOrderController@index');

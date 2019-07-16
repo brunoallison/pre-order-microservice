@@ -79,7 +79,8 @@ $app->middleware([App\Http\Middleware\AuthenticateAccess::class]);
 */
 
 $app->register(Prettus\Repository\Providers\LumenRepositoryServiceProvider::class);
-// $app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\RepositoryServiceProvider::class);
+//$app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
