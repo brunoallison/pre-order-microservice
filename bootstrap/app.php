@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
     dirname(__DIR__)
@@ -57,6 +57,8 @@ $app->singleton(
 |
 */
 
+$app->middleware([App\Http\Middleware\AuthenticateAccess::class]);
+
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
@@ -93,9 +95,9 @@ $app->register(Prettus\Repository\Providers\LumenRepositoryServiceProvider::clas
 */
 
 $app->router->group([
-    'namespace' => 'App\Http\Controllers',
-], function ($router) {
-    require __DIR__.'/../routes/web.php';
+                        'namespace' => 'App\Http\Controllers',
+                    ], function ($router) {
+    require __DIR__ . '/../routes/web.php';
 });
 
 return $app;
