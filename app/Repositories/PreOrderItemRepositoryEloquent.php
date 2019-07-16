@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\PreOrder;
+use App\Models\PreOrderItem;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 
 /**
- * Class PreOrderRepositoryEloquent
+ * Class PreOrderItemRepositoryEloquent
  *
  * @package App\Repositories
  */
-class PreOrderRepositoryEloquent extends BaseRepository implements PreOrderRepository
+class PreOrderItemRepositoryEloquent extends BaseRepository implements PreOrderItemRepository
 {
     /**
      * Specify Model class name
@@ -20,7 +20,7 @@ class PreOrderRepositoryEloquent extends BaseRepository implements PreOrderRepos
      */
     public function model()
     {
-        return PreOrder::class;
+        return PreOrderItem::class;
     }
 
     /**

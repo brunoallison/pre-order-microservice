@@ -9,7 +9,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @package App\Repositories
  */
-interface PreOrderRepository extends RepositoryInterface
+interface PreOrderItemRepository extends RepositoryInterface
 {
     //
 }

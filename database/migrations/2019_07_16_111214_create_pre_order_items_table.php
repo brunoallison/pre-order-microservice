@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePreOrdersTable extends Migration
+class CreatePreOrderItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,18 @@ class CreatePreOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('pre_orders', function (Blueprint $table) {
+        Schema::create('pre_order_items', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('name');
+            $table->integer('pre_order_id')->unsigned();
+            $table->foreign('pre_order_id')->references('id')->on('pre_orders');
+
+
+            $table->decimal('quantity', 10, 6);
+            $table->decimal('unity_cost', 10,6);
+            $table->double('net_weight', 15,8)->nullable();
+            $table->double('gross_weight', 15,8)->nullable();
+
 
             $table->SoftDeletes();
             $table->timestamps();
@@ -30,6 +38,6 @@ class CreatePreOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pre_orders');
+        Schema::dropIfExists('pre_order_items');
     }
 }
