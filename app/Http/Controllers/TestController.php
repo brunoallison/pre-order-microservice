@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+use App\Traits\ApiResponser;
+
+class TestController extends Controller
 {
+    use ApiResponser;
     /**
      * Create a new controller instance.
      *
@@ -14,5 +17,8 @@ class ExampleController extends Controller
         //
     }
 
-    //
+    public function index()
+    {
+        return $this->successResponse("pong");
+    }
 }

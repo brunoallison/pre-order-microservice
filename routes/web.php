@@ -11,9 +11,7 @@
 |
 */
 
-$router->get('/ping', function () use ($router) {
-    return "pong";
-});
+$router->get('/ping', 'TestController@index');
 
 $router->get('/pre-orders', 'PreOrderController@index');
 $router->post('/pre-orders', 'PreOrderController@store');
