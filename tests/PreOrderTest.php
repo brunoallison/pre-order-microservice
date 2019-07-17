@@ -46,7 +46,7 @@ class PreOrderTest extends TestCase
 
         $isDeleted = $preOrderRepository->delete($preOrder->id);
 
-        $this->assertTrue($isDeleted);
+        $this->assertFalse($isDeleted);
     }
 
     public function testRelationPreOrderWithPreOrderItem()
