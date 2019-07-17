@@ -12,7 +12,6 @@
 */
 
 $router->get('/ping', 'TestController@index');
-$router->get('/ping', 'TestController@index');
 
 $router->get('/pre-orders', 'PreOrderController@index');
 $router->post('/pre-orders', 'PreOrderController@store');
