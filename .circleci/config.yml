@@ -15,7 +15,9 @@ jobs:
           DB_CONNECTION: sqlite
           DB_HOST: 127.0.0.1
           DB_PORT: 3306
-          DB_DATABASE: sqlite_testing
+#          DB_DATABASE: sqlite_testing
+          CACHE_DRIVER: memcached
+          QUEUE_DRIVER: sync
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -56,8 +58,9 @@ jobs:
 #            - node_modules
 
       # prepare the database
-      - run: touch database/sqlite_testing.sqlite
-      - run: php artisan migrate --env=testing --database=sqlite_testing --force
+      - run: touch database/database.sqlite
+#      - run: php artisan migrate --env=testing --database=database --force
+      - run: php artisan migrate
 
       # run tests with phpunit or codecept
       - run: ./vendor/bin/phpunit
