@@ -83,7 +83,7 @@ class PreOrderItemTest extends TestCase
         $this->assertTrue($isDeleted);
     }
 
-    public function testRelationPreOrderWithPreOrderItem()
+    public function testRelationPreOrderItemWithPreOrder()
     {
         $preOrderRepository     = app()->make(\App\Repositories\PreOrderRepository::class);
         $preOrderItemRepository = app()->make(\App\Repositories\PreOrderItemRepository::class);
