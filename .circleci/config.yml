@@ -27,7 +27,8 @@ jobs:
       - checkout
       - run:
           name: Install PHP Extensions
-          command: sudo -E docker-php-ext-install pdo pdo_mysql zip
+#          command: sudo -E docker-php-ext-install pdo pdo_mysql zip
+          command: apt-get -y --no-install-recommends install  php7.3-mysql
 
       - run:
           name: Install Composer
