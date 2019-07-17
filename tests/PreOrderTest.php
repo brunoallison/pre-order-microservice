@@ -38,9 +38,7 @@ class PreOrderTest extends TestCase
     public function testDeletePreOrder()
     {
         $preOrderRepository = app()->make(\App\Repositories\PreOrderRepository::class);
-
-
-        $this->assertTrue(true);
+        $this->assertFalse($isDeleted);
     }
 
     public function testRelationPreOrderWithPreOrderItem()
