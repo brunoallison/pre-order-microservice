@@ -23,12 +23,15 @@ class PreOrderTest extends TestCase
     {
         $preOrderRepository = app()->make(\App\Repositories\PreOrderRepository::class);
 
+
+        $preOrderRepository = app()->make(\App\Repositories\PreOrderRepository::class);
+
         $faker = Faker\Factory::create();
         $name  = $faker->name;
 
         $preOrder = $preOrderRepository->create(['name' => $name]);
 
-        $newName = $faker->name;
+        $isDeleted = $preOrderRepository->delete($preOrder->id);
 
         $preOrderUpdated = $preOrderRepository->update(['name' => $newName], $preOrder->id);
 
@@ -39,24 +42,18 @@ class PreOrderTest extends TestCase
     {
         $preOrderRepository = app()->make(\App\Repositories\PreOrderRepository::class);
 
-        $faker = Faker\Factory::create();
-        $name  = $faker->name;
 
-        $preOrder = $preOrderRepository->create(['name' => $name]);
-
-        $isDeleted = $preOrderRepository->delete($preOrder->id);
-
-        $this->assertTrue($isDeleted);
+        $this->assertTrue(true);
     }
 
     public function testRelationPreOrderWithPreOrderItem()
     {
-        $preOrderRepository     = app()->make(\App\Repositories\PreOrderRepository::class);
-        $preOrderItemRepository = app()->make(\App\Repositories\PreOrderItemRepository::class);
+
 
         $faker = Faker\Factory::create();
         $name  = $faker->name;
-
+        $preOrderRepository     = app()->make(\App\Repositories\PreOrderRepository::class);
+        $preOrderItemRepository = app()->make(\App\Repositories\PreOrderItemRepository::class);
         $preOrder = $preOrderRepository->create(['name' => $name]);
 
         $preOrderItemInserted = ['pre_order_id' => $preOrder->id,
