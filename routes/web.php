@@ -15,6 +15,7 @@ $router->get('/ping', 'TestController@index');
 
 $router->get('/pre-orders', 'PreOrderController@index');
 $router->post('/pre-orders', 'PreOrderController@store');
+$router->post('/pre-orders', 'PreOrderController@store');
 $router->get('/pre-orders/{pre-order}', 'PreOrderController@show');
 $router->put('/pre-orders/{pre-order}', 'PreOrderController@update');
 $router->patch('/pre-orders/{pre-order}', 'PreOrderController@update');
